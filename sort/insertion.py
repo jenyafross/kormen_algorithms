@@ -17,6 +17,7 @@ if __name__ == '__main__':
     from utils.time import timeit
     from random import randint
 
-    l = [randint(-2 ** 13, 2 ** 13) for _ in range(2 ** 8)]
-    # print(l)
-    print(timeit()(insort)(l))
+    l = [randint(-2 ** 13, 2 ** 13) for _ in range(2 ** 10)]
+    sl = timeit()(sorted)(l)
+    in_l = timeit()(insort)(l)
+    print(in_l == sl)
