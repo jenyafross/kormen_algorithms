@@ -1,7 +1,7 @@
 def msort(__iterable, start=None, end=None):
     start = start if start is not None else 0
     end = end if end is not None else len(__iterable)
-    if start < end-1:
+    if start < end - 1:
         mid = (start + end) // 2
         msort(__iterable, start, mid)
         msort(__iterable, mid, end)
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     from utils.time import timeit
     from random import randint
 
-    l = [randint(-2 ** 13, 2 ** 13) for _ in range(2 ** 10)]
+    l = [randint(-2 ** 13, 2 ** 13) for _ in range(2 ** 2 + 1)]
     sl = timeit()(sorted)(l)
     timeit()(msort)(l)
     print(l == sl)
